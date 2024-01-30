@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:33:35 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 15:34:53 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/30 18:16:39 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,16 @@
 
 class Animal {
 	public:
-	
+		Animal(void);
+		Animal(Animal const & src);
+		virtual ~Animal(void);
+		Animal & operator=(Animal const & rhs);
+		
+		virtual void makeSound(void) const;
+		std::string getType(void) const;
+		
 	protected:
-		std::string type;	
+		std::string _type;	
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:52:54 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 16:03:11 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/30 17:41:28 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Animal::Animal(void) {
 	std::cout << "Animal default constructor called" << std::endl;
+	this->_type = "Animal";
 }
 
 Animal::Animal(Animal const & src) {
@@ -28,14 +29,14 @@ Animal::~Animal(void) {
 Animal & Animal::operator=(Animal const & rhs) {
 	std::cout << "Animal assignation operator called" << std::endl;
 	if (this != &rhs)
-		this->type = rhs.type;
+		this->_type = rhs._type;
 	return (*this);
 }
 
-Animal::Animal(std::string type) : type(type) {
-	std::cout << "Animal constructor called" << std::endl;
+void Animal::makeSound(void) const {
+	std::cout << "Animal makesound called" << std::endl;
 }
 
-Animal::getType(void) const {
-	return (this->type);
+std::string Animal::getType(void) const {
+	return (this->_type);
 }

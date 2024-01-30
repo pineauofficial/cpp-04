@@ -6,12 +6,12 @@
 #    By: pineau <pineau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 14:17:43 by nasamadi          #+#    #+#              #
-#    Updated: 2024/01/30 15:25:52 by pineau           ###   ########.fr        #
+#    Updated: 2024/01/30 18:28:28 by pineau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ### PROGRAM ###
-NAME		= ClapTrap
+NAME		= animal
 
 ### SOURCES ###
 SRC_DIR		= sources/
@@ -19,10 +19,13 @@ OBJ_DIR		= .objs/
 INCLUDES	= includes/
 
 SRC		=	main.cpp \
+			Animal.cpp \
+			Dog.cpp \
+			Cat.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp
+		
 
-			
-			
-			
 
 OBJ	= $(SRC:%.cpp=$(OBJ_DIR)%.o)
 DEP = $(OBJ:.o=.d)
