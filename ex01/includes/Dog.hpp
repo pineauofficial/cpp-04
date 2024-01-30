@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:49:22 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 17:43:20 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/30 19:20:43 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Dog : public Animal {
 		
 		void makeSound(void) const;
 	private:
+		Brain*	_brain;
 	
 };
 

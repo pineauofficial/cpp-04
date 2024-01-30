@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:52:57 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 17:43:08 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/30 19:22:23 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog(void) {
 	std::cout << "Dog default constructor called" << std::endl;
 	this->_type = "Dog";
+	this->_brain = new Brain();
 }
 
 Dog::Dog(Dog const & src) {
@@ -24,6 +25,7 @@ Dog::Dog(Dog const & src) {
 
 Dog::~Dog(void) {
 	std::cout << "Dog destructor called" << std::endl;
+	delete this->_brain;
 }
 
 Dog & Dog::operator=(Dog const & rhs) {

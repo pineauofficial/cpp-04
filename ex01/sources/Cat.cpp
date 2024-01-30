@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:53:08 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 17:43:11 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/30 19:22:31 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat(void) {
 	std::cout << "Cat default constructor called" << std::endl;
 	this->_type = "Cat";
+	this->_brain = new Brain();
 }
 
 Cat::Cat(Cat const & src) {
@@ -24,6 +25,7 @@ Cat::Cat(Cat const & src) {
 
 Cat::~Cat(void) {
 	std::cout << "Cat destructor called" << std::endl;
+	delete this->_brain;
 }
 
 Cat & Cat::operator=(Cat const & rhs) {
