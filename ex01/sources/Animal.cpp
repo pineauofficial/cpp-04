@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:52:54 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 17:41:28 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/31 12:13:32 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,9 @@ void Animal::makeSound(void) const {
 
 std::string Animal::getType(void) const {
 	return (this->_type);
+}
+
+Brain* Animal::getBrain(void) const {
+	std::cout << "Animal getBrain called" << std::endl;
+	return (NULL);
 }

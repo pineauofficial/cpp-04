@@ -6,7 +6,7 @@
 #    By: pineau <pineau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 14:17:43 by nasamadi          #+#    #+#              #
-#    Updated: 2024/01/30 18:28:28 by pineau           ###   ########.fr        #
+#    Updated: 2024/01/31 09:51:33 by pineau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ SRC		=	main.cpp \
 			Dog.cpp \
 			Cat.cpp \
 			WrongAnimal.cpp \
-			WrongCat.cpp
-		
+			WrongCat.cpp \
+			Brain.cpp \
 
 
 OBJ	= $(SRC:%.cpp=$(OBJ_DIR)%.o)

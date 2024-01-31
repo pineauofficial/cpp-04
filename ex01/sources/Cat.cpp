@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:53:08 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 19:22:31 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/31 15:01:52 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,20 @@ Cat::~Cat(void) {
 }
 
 Cat & Cat::operator=(Cat const & rhs) {
-	std::cout << "Cat assignation operator called" << std::endl;
 	if (this != &rhs)
+	{
 		this->_type = rhs._type;
+		if (this->_brain)
+			delete this->_brain;
+		this->_brain = new Brain(*rhs._brain);
+	}
 	return (*this);
 }
 
 void Cat::makeSound(void) const {
 	std::cout << "Miaou" << std::endl;
+}
+
+Brain* Cat::getBrain(void) const {
+	return (this->_brain);
 }

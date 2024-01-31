@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:46:53 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 19:07:29 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/31 14:01:28 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,18 @@
 
 # include <iostream>
 
-class Brian {
+class Brain {
 	public:
-		Brian(void);
-		Brian(Brian const & src);
-		virtual ~Brian(void);
-		Brian & operator=(Brian const & rhs);
+		Brain(void);
+		Brain(Brain const & src);
+		virtual ~Brain(void);
+		Brain & operator=(Brain const & rhs);
 		
-		void makeSound(void) const;
-		std::string getType(void) const;
-
-		std::string ideas[100];//
+		void setIdea(int i, std::string idea);
+		void	display_idea(int i);
 	private:
+		std::string ideas[100];
 	
-}
+};
 
 #endif

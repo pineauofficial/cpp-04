@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:49:22 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 19:20:43 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/31 12:12:17 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal {
 	public:
@@ -25,8 +26,9 @@ class Dog : public Animal {
 		Dog(std::string type);
 		
 		void makeSound(void) const;
+		Brain* getBrain(void) const;
 	private:
-		Brain*	_brain;
+		Brain* _brain;
 	
 };
 

@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:52:57 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 19:22:23 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/31 12:41:40 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,18 @@ Dog::~Dog(void) {
 
 Dog & Dog::operator=(Dog const & rhs) {
 	std::cout << "Dog assignation operator called" << std::endl;
-	if (this != &rhs)
+		if (this != &rhs)
 		this->_type = rhs._type;
+	if (this->_brain)
+		delete this->_brain;
+	this->_brain = new Brain(*rhs._brain);
 	return (*this);
 }
 
 void Dog::makeSound(void) const {
 	std::cout << "Woof Woof" << std::endl;
+}
+
+Brain* Dog::getBrain(void) const {
+	return (this->_brain);
 }

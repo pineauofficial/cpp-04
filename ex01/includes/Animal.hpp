@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:33:35 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/30 18:16:39 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/31 14:16:10 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ANIMAL_HPP
 
 # include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
 class Animal {
 	public:
@@ -24,7 +26,7 @@ class Animal {
 		
 		virtual void makeSound(void) const;
 		std::string getType(void) const;
-		
+		virtual Brain* getBrain(void) const;
 	protected:
 		std::string _type;	
 };
