@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:49:47 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/31 14:26:37 by pineau           ###   ########.fr       */
+/*   Updated: 2024/02/01 16:08:11 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Brain::Brain(void) {
 	std::cout << "Brain default constructor called" << std::endl;
-	// ideas = new std::string[100];
 }
 
 Brain::Brain(Brain const & src) {

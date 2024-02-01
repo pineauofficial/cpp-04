@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:53:09 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/31 15:00:05 by pineau           ###   ########.fr       */
+/*   Updated: 2024/02/01 16:12:56 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,14 @@ int main(void) {
 	animal[3]->getBrain()->setIdea(100, "I'm a bad cat");
 	animal[3]->getBrain()->display_idea(100);
 	std::cout << std::endl;
-	const Cat* cat1 = new Cat();
-	const Cat* cat2 = new Cat(*cat1);
-	cat2->getBrain()->setIdea(0, "I'm a cat");
+	const Cat* cat = new Cat();
+	const Cat* cat2 = new Cat(*cat);
+	cat->getBrain()->display_idea(0);
+	cat2->getBrain()->setIdea(0, "I'm a new cat");
 	cat2->getBrain()->display_idea(0);
-	cat1->getBrain()->setIdea(0, "I'm a cat");
-	cat1->getBrain()->display_idea(0);
 	std::cout << "-------------------------------------" << std::endl;
 	for (int i = 0; i < nb; i++)
 		delete animal[i];
-	delete cat1;
+	delete cat;
 	delete cat2;
 }
