@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:53:08 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/01 16:12:19 by pineau           ###   ########.fr       */
+/*   Updated: 2024/02/09 14:30:41 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Cat::Cat(void) {
 
 Cat::Cat(Cat const & src) {
 	std::cout << "Cat copy constructor called" << std::endl;
+	this->_brain = NULL;
 	*this = src;
 }
 
@@ -32,6 +33,8 @@ Cat & Cat::operator=(Cat const & rhs) {
 	std::cout << "Cat assignation operator called" << std::endl;
 	if (this != &rhs)
 	{
+		if (this->_brain)
+			delete this->_brain;
 		this->_type = rhs._type;
 		this->_brain = new Brain(*rhs._brain);
 	}
