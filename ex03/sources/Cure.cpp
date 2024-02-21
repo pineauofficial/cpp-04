@@ -5,37 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 18:18:00 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/09 15:23:48 by pineau           ###   ########.fr       */
+/*   Created: 2023/05/08 10:37:19 by rertzer           #+#    #+#             */
+/*   Updated: 2024/02/21 14:15:46 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
-cure::cure(void) {
-	std::cout << "Cure default constructor called" << std::endl;
+Cure::Cure(): AMateria("cure")
+{
+	std::cout << "Cure default constructor called\n";
 }
 
-cure::cure(cure const & src) {
-	std::cout << "Cure copy constructor called" << std::endl;
-	*this = src;
+Cure::Cure(Cure const & src): AMateria("cure")
+{
+	(void)src;
+	std::cout << "Cure copy constructor called\n";
 }
 
-cure::~cure(void) {
-	std::cout << "Cure destructor called" << std::endl;
+Cure::~Cure()
+{
+	std::cout << "Cure destructor called\n";
 }
 
-cure & cure::operator=(cure const & rhs) {
-	std::cout << "Cure assignation operator called" << std::endl;
-	if (this != &rhs)
-		this->_type = rhs._type;
-	return (*this);
+Cure &	Cure::operator=(Cure const & rhs)
+{
+	(void)rhs;
+	std::cout << "Cure assignment operator called\n";
+	return *this;
 }
 
-cure* cure::clone() const {
-	return (new cure(*this));
+Cure *	Cure::clone() const
+{
+	Cure*	plaster = new Cure();
+	return plaster;
 }
 
-void use(ICharacter& target) {
-	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+void	Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

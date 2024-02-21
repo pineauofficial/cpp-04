@@ -5,43 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 18:17:34 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/09 15:23:25 by pineau           ###   ########.fr       */
+/*   Created: 2023/05/08 10:37:19 by rertzer           #+#    #+#             */
+/*   Updated: 2024/02/21 14:15:38 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-AMateria::AMateria(void) {
-	std::cout << "AMateria default constructor called" << std::endl;
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+
+AMateria::AMateria()
+{
+	std::cout << "AMateria default constructor called\n";
 }
 
-AMateria::AMateria(std::string const & type) : _type(type) {
-	std::cout << "AMateria constructor called" << std::endl;
+AMateria::AMateria(std::string const & tp): type(tp)
+{
+	std::cout << "AMateria constructor called\n";
 }
 
-AMateria::AMateria(AMateria const & src) {
-	std::cout << "AMateria copy constructor called" << std::endl;
-	*this = src;
+AMateria::AMateria(AMateria const & src)
+{
+	(void)src;
+	std::cout << "AMateria copy constructor called\n";
 }
 
-AMateria::~AMateria(void) {
-	std::cout << "AMateria destructor called" << std::endl;
+AMateria::~AMateria()
+{
+	std::cout << "AMateria destructor called\n";
 }
 
-AMateria & AMateria::operator=(AMateria const & rhs) {
-	std::cout << "AMateria assignation operator called" << std::endl;
-	if (this != &rhs)
-		this->_type = rhs._type;
-	return (*this);
+AMateria &	AMateria::operator=(AMateria const & rhs)
+{
+	(void)rhs;
+	std::cout << "AMateria assignment operator called\n";
+	return *this;
 }
 
-std::string const & getType() const {
-	return (this->_type);
+std::string const &	AMateria::getType() const
+{
+	return type;
 }
 
-AMateria* clone() const {
-	return (new AMateria(*this));
-}
-
-void use (ICharacter& target) {
-	std::cout << "AMateria use called" << std::endl;
+void	AMateria::use(ICharacter& target)
+{
+	std::cout << "Won't do anything to " << target.getName() << std::endl;
 }

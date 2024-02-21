@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:39:53 by rertzer           #+#    #+#             */
-/*   Updated: 2024/02/21 14:15:26 by pineau           ###   ########.fr       */
+/*   Updated: 2024/02/21 14:15:13 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 # include <iostream>
+# include "ICharacter.hpp"
 
-class AMateria;
-
-class ICharacter
+class Character: public ICharacter
 {
 	public:
-		virtual ~ICharacter() {};
+		Character();
+		Character(std::string const & nm);
+		Character(Character const & src);
+		~Character();
+		Character &	operator=(Character const & rhs);
 
-		virtual std::string const & getName() const = 0;
-		virtual void 				equip(AMateria* m) = 0;
-		virtual void 				unequip(int idx) = 0;
-		virtual void 				use(int idx, ICharacter& target) = 0;
+		std::string const & getName() const;
+		void				equip(AMateria* m);
+		void 				unequip(int idx);
+		void 				use(int idx, ICharacter& target);
+
+	private:
+		std::string	name;
+		AMateria *	backpack[4];
 };
 
 # endif

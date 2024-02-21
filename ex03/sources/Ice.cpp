@@ -5,38 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 18:17:48 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/09 15:23:54 by pineau           ###   ########.fr       */
+/*   Created: 2023/05/08 10:37:19 by rertzer           #+#    #+#             */
+/*   Updated: 2024/02/21 14:15:50 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-ice::ice(void) {
-	std::cout << "Ice default constructor called" << std::endl;
+Ice::Ice(): AMateria("ice")
+{
+	std::cout << "Ice default constructor called\n";
 }
 
-ice::ice(ice const & src) {
-	std::cout << "Ice copy constructor called" << std::endl;
-	*this = src;
+Ice::Ice(Ice const & src): AMateria("ice")
+{
+	(void)src;
+	std::cout << "Ice copy constructor called\n";
 }
 
-ice::~ice(void) {
-	std::cout << "Ice destructor called" << std::endl;
+Ice::~Ice()
+{
+	std::cout << "Ice destructor called\n";
 }
 
-ice & ice::operator=(ice const & rhs) {
-	std::cout << "Ice assignation operator called" << std::endl;
-	if (this != &rhs)
-		this->_type = rhs._type;
-	return (*this);
+Ice &	Ice::operator=(Ice const & rhs)
+{
+	(void)rhs;
+	std::cout << "Ice assignment operator called\n";
+	return *this;
 }
 
-ice* ice::clone() const {
-	return (new ice(*this));
+Ice *	Ice::clone() const
+{
+	Ice*	icecube = new Ice();
+	return icecube;
 }
 
-void use(ICharacter& target) {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *"<< std::endl;
+void	Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

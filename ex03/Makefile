@@ -6,12 +6,12 @@
 #    By: pineau <pineau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 14:17:43 by nasamadi          #+#    #+#              #
-#    Updated: 2024/02/01 17:51:23 by pineau           ###   ########.fr        #
+#    Updated: 2024/02/11 17:40:01 by pineau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ### PROGRAM ###
-NAME		= aanimal
+NAME		= materia
 
 ### SOURCES ###
 SRC_DIR		= sources/
@@ -19,6 +19,11 @@ OBJ_DIR		= .objs/
 INCLUDES	= includes/
 
 SRC		=	main.cpp \
+			AMateria.cpp \
+			Cure.cpp \
+			Ice.cpp \
+			MateriaSource.cpp \
+			Character.cpp\
 			
 
 

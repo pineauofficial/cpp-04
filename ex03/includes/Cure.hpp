@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 18:11:51 by pineau            #+#    #+#             */
-/*   Updated: 2024/02/09 14:35:36 by pineau           ###   ########.fr       */
+/*   Created: 2023/05/08 10:25:38 by rertzer           #+#    #+#             */
+/*   Updated: 2024/02/21 14:15:17 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,19 @@
 # define CURE_HPP
 
 # include <iostream>
+# include "AMateria.hpp"
 
-class cure : public AMateria {
+class Cure: public AMateria
+{
 	public:
-		cure* clone() const;
-		void use(ICharacter& target);
+		Cure();
+		Cure(Cure const & src);
+		virtual ~Cure();
+
+		Cure &	operator=(const Cure &rhs);
+
+		Cure*		clone() const;
+		void		use(ICharacter& target);
 };
 
 #endif
